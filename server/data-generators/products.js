@@ -45,6 +45,6 @@ function generateproducts () {
       "images": imgs 
     })
   }
-  return { "products": products, "tags": globalTagsObjArray }
+  return { "products": products, "tags": globalTagsObjArray };
 }
 module.exports = generateproducts

@@ -1,9 +1,9 @@
-import { BaseRepository } from './../../app-models/repos/base-repository';
 import { Injectable } from '@angular/core';
+import { BaseRepository } from '../base-services/base-repository';
 
 @Injectable()
-export class SlidesRepositoryService extends BaseRepository {
+export class SlidesRepositoryService<T> extends BaseRepository{
 
-constructor() { }
+ 
 
 }

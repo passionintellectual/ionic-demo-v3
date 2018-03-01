@@ -7,9 +7,11 @@ function generateslides () {
    
     slides.push({
       "id": id,
-      "image-url": faker.image.imageUrl(400,800, imgCats[faker.random.number(imgCats.length -1)]),
-      "redirect-url": faker.internet.url()
-    })
+      "title": faker.lorem.sentence(),
+      "description": faker.lorem.paragraph(),
+      "imageUrl": faker.image.imageUrl(600,800, imgCats[faker.random.number(imgCats.length -1)]),
+      "redirectUrl": faker.internet.url()
+    });
   }
   return { "slides": slides }
 }

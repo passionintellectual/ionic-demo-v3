@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar #nav>
     <ion-title>
       Ionic Blank
     </ion-title>
@@ -8,9 +8,15 @@
 
 <ion-content padding>
   <ion-slides>
-    <ion-slide>
-      <h1>Slide 1</h1>
-      <ion-img [src]=""></ion-img>
+    <ion-slide *ngFor="let slide of slides">
+      <h1   padding>{{slide.title}}</h1>
+      <ion-img [src]="slide.imageUrl"></ion-img>
     </ion-slide>
   </ion-slides>
+  <ion-fab color="primary"  bottom right fixed>
+      <button ion-button round padding color="primary" icon-end (click)="skipSlider()">
+        Skip
+        <ion-icon name="play" right></ion-icon>
+      </button>
+  </ion-fab>
 </ion-content>
