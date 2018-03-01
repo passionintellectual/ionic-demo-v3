@@ -9,4 +9,4 @@ Install Ionic Framework
 `ionic serve`
 
 Generating pages 
-`ionic g page loginPage`
+`ionic g page login`
