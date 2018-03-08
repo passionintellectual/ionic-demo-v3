@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server":"json-server .\\data-generators\\db.js",
+    "server": "json-server ./data-generators/db.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
