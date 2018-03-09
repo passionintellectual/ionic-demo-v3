@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {LoginPage} from "../login/login";
 import {SignupPage} from "../signup/signup";
+import {ProductCategoriesPage} from "../product-categories/product-categories";
 
 /**
  * Generated class for the GuestPage page.
@@ -30,5 +31,10 @@ export class GuestPage {
 
   goToSignup() {
     this.navCtrl.push(SignupPage);
+  }
+
+  goToCategories() {
+    this.navCtrl.push(ProductCategoriesPage);
+
   }
 }

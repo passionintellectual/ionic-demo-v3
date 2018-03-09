@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {BaseRepository} from "../../../../services/base-services/base-repository";
 
 /**
  * Generated class for the MemberOrdersPage page.
@@ -15,11 +16,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MemberOrdersPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  products: any[];
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public ordersRepo: BaseRepository
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MemberOrdersPage');
+    this.ordersRepo.getAll('products').subscribe((prods) => {
+      this.products = prods
+    });
   }
 
+
+  cancelOrder() {
+
+  }
+
+  goToProductDetails() {
+
+  }
 }

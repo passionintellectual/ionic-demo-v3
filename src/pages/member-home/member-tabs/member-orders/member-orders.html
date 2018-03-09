@@ -15,5 +15,50 @@
 
 
 <ion-content padding>
+  <ion-list [virtualScroll]="products" [approxItemHeight]="'132px'" [headerFn]="getProductCategory">
 
+    <ion-item-divider color="secondary" *virtualHeader="let header">
+      {{header}}
+    </ion-item-divider>
+
+
+    <ion-item *virtualItem="let prod">
+      <ion-card  >
+        <ion-card-header class="prod-header">{{prod.title}}</ion-card-header>
+        <ion-card-content>
+          <ion-row>
+            <ion-col *ngIf="prod.images && prod.images.length">
+              <ion-img width="80" height="80" [src]="prod.images[0]"></ion-img>
+            </ion-col>
+            <ion-col>
+              <p>
+                <span ion-text>Name:</span>
+                {{prod.name}}
+              </p>
+              <p>
+                Price: {{prod.price}}
+              </p>
+            </ion-col>
+          </ion-row>
+          <div>
+            <ion-chip color="danger" *ngFor="let tag of prod.tagss">
+              <ion-label>{{tag}}</ion-label>
+            </ion-chip>
+          </div>
+
+          <button ion-button icon-left full (click)="goToProductDetails(prod)">
+            <ion-icon name="search"></ion-icon>
+            Details
+          </button>
+          <button ion-button icon-left full (click)="cancelOrder(prod)">
+            <ion-icon name="trash"></ion-icon>
+            Cancel
+          </button>
+
+
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+
+  </ion-list>
 </ion-content>
