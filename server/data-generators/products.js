@@ -19,7 +19,7 @@ function generateproducts () {
                 description:"Some category Description"
             })
         }
-        
+
     }
 
     var imgsNumber = Math.round(Math.random() * 10) + 1;
@@ -42,8 +42,11 @@ function generateproducts () {
       "adjective": faker.commerce.productAdjective() + faker.commerce.productMaterial(),
       "price": faker.commerce.price(),
       "tags": tagsArray,
-      "images": imgs 
+      "images": imgs
     })
+
+
+
   }
   return { "products": products, "tags": globalTagsObjArray };
 }

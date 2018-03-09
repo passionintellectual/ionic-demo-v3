@@ -1,8 +1,8 @@
 import { BaseRepository } from './../../services/base-services/base-repository';
 import { Component, ViewChild } from '@angular/core';
 import { SlidesModel } from '../../app-models/slides.interface';
-import { LoginPage } from '../login/login';
 import { NavController } from 'ionic-angular';
+import {GuestPage} from "../guest/guest";
 
 @Component({
   selector: 'page-home',
@@ -20,7 +20,7 @@ export class HomePage {
   skipSlider(){
       // Not using this method, because we don't wan't back button when user goes to login page.
     // this.navController.push(LoginPage);
-    this.navController.setRoot(LoginPage);
+    this.navController.setRoot(GuestPage);
   }
 
   ionViewDidLoad(){

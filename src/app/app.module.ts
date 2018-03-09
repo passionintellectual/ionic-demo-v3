@@ -10,6 +10,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import {GuestPageModule} from "../pages/guest/guest.module";
+import {SignupPageModule} from "../pages/signup/signup.module";
+import {MemberHomePageModule} from "../pages/member-home/member-home.module";
+import {ContactPageModule} from "../pages/contact/contact.module";
 
 
 
@@ -22,6 +26,10 @@ import { LoginPage } from '../pages/login/login';
   imports: [
     BrowserModule,
     HttpClientModule,
+    GuestPageModule,
+    SignupPageModule,
+    MemberHomePageModule,
+ContactPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
