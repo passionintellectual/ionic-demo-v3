@@ -14,7 +14,7 @@ export class BaseRepository {
 
     }
 
-     
+
 
     getAll<T>(endpoint: string):Observable<T[]> {
         return this.http
@@ -24,4 +24,8 @@ export class BaseRepository {
         })
         .map(resp => resp as T[]);
       }
+
+  getPaginatedUrl(entity: string, page: number, limit: number) {
+    return `users?_page=${page}&_limit=${limit}`;
+  }
 }

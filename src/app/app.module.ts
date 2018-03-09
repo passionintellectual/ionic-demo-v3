@@ -15,6 +15,9 @@ import {SignupPageModule} from "../pages/signup/signup.module";
 import {MemberHomePageModule} from "../pages/member-home/member-home.module";
 import {ContactPageModule} from "../pages/contact/contact.module";
 import {ProductCategoriesPageModule} from "../pages/product-categories/product-categories.module";
+import {ProductListPageModule} from "../pages/product-list/product-list.module";
+import {ProductDetailsPageModule} from "../pages/product-details/product-details.module";
+import {UsersPageModule} from "../pages/users/users.module";
 
 
 @NgModule({
@@ -31,6 +34,9 @@ import {ProductCategoriesPageModule} from "../pages/product-categories/product-c
     MemberHomePageModule,
     ProductCategoriesPageModule,
     ContactPageModule,
+    ProductListPageModule,
+    ProductDetailsPageModule,
+    UsersPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
