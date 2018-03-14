@@ -14,5 +14,8 @@
 
 
 <ion-content padding>
-
+  <form action="" [formGroup]="settingsForm" (submit)="saveSettings()">
+    <input type="text" formControlName="defaultPageSize">
+    <button  type="submit">Submit</button>
+  </form>
 </ion-content>

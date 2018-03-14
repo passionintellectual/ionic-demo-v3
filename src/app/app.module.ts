@@ -19,6 +19,7 @@ import {ProductListPageModule} from "../pages/product-list/product-list.module";
 import {ProductDetailsPageModule} from "../pages/product-details/product-details.module";
 import {UsersPageModule} from "../pages/users/users.module";
 import {SettingsPageModule} from "../pages/settings/settings.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import {SettingsPageModule} from "../pages/settings/settings.module";
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     HttpClientModule,
     GuestPageModule,
     SignupPageModule,
