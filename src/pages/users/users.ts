@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, Refresher} from 'ionic-angular';
 import {BaseRepository} from "../../services/base-services/base-repository";
 import {Observable} from "rxjs/Observable";
+import {Subscription} from "rxjs/Subscription";
 
 /**
  * Generated class for the UsersPage page.
@@ -22,6 +23,7 @@ export class UsersPage {
   limit: number = 10;
   totalPage: number = 50;
   private errorMessage: any;
+  private subscription: Subscription;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public usersRepo: BaseRepository) {
@@ -37,18 +39,33 @@ export class UsersPage {
 
 
   doInfinite(infiniteScroll) {
+    this.getUsers();
+
+    console.log('Async operation has ended');
+    infiniteScroll.complete();
+  }
+
+  private getUsers() {
     this.page = this.page + 1;
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+    this.subscription = this.usersRepo.getAll(this.usersRepo.getPaginatedUrl('users', this.page, this.limit))
+      .subscribe(
+        res => {
+          this.users.push(...res);
+        },
+        error => {
+          this.errorMessage = <any>error
+          --this.page;
+        });
+  }
+
+  doRefresh($event: Refresher) {
     setTimeout(() => {
+      this.getUsers();
+      $event.complete();
+    },1000);
 
-      this.usersRepo.getAll(this.usersRepo.getPaginatedUrl('users', this.page, this.limit))
-        .subscribe(
-          res => {
-            this.users.push(...res);
-          },
-          error => this.errorMessage = <any>error);
-
-      console.log('Async operation has ended');
-      infiniteScroll.complete();
-    }, 1000);
   }
 }

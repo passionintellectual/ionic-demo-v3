@@ -1,7 +1,7 @@
-<ion-menu [content]="content">
+<ion-menu [content]="content" side="left">
   <ion-header>
     <ion-toolbar>
-      <ion-title menuToggle>Welcome Guest</ion-title>
+      <ion-title>Welcome Guest</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -11,18 +11,50 @@
       <button menuClose ion-item (click)="goToLogin()">Login</button>
       <button menuClose ion-item (click)="goToSignup()">Signup</button>
       <button menuClose ion-item (click)="goToCategories()">Product Categories</button>
-      <button menuClose ion-item (click)="gotToProducts()">Products</button>
-      <button menuClose ion-item (click)="gotToUsers()">Members</button>
+      <button menuClose ion-item (click)="goToProducts()">Products</button>
+      <button menuClose ion-item (click)="goToUsers()">Members</button>
     </ion-list>
   </ion-content>
 
 </ion-menu>
+
+
+<ion-menu [content]="content" side="right">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Settings</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-list-header>Customize</ion-list-header>
+      <button menuClose ion-item (click)="goToSettings()">Settings</button>
+
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+
 <ion-header>
   <ion-navbar>
-    <ion-icon name="menu" menuToggle="" left></ion-icon>
+    <button menuToggle="left" ion-button>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
       Welcome Guest!
     </ion-title>
+
+    <ion-buttons end >
+    <button ion-button  (click)="openRightMenu()" left>
+      <ion-icon name="cog" ></ion-icon>
+       Without menuToggle
+    </button>
+    <button ion-button right menuToggle="right" right>
+      <ion-icon name="settings" right></ion-icon>
+    </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 

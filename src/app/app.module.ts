@@ -18,6 +18,7 @@ import {ProductCategoriesPageModule} from "../pages/product-categories/product-c
 import {ProductListPageModule} from "../pages/product-list/product-list.module";
 import {ProductDetailsPageModule} from "../pages/product-details/product-details.module";
 import {UsersPageModule} from "../pages/users/users.module";
+import {SettingsPageModule} from "../pages/settings/settings.module";
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import {UsersPageModule} from "../pages/users/users.module";
     ProductListPageModule,
     ProductDetailsPageModule,
     UsersPageModule,
+    SettingsPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

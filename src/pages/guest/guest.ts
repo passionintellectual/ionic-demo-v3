@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, MenuController, NavController, NavParams} from 'ionic-angular';
 import {LoginPage} from "../login/login";
 import {SignupPage} from "../signup/signup";
 import {ProductCategoriesPage} from "../product-categories/product-categories";
 import {ProductListPage} from "../product-list/product-list";
 import {UsersPage} from "../users/users";
+import {SettingsPage} from "../settings/settings";
 
 /**
  * Generated class for the GuestPage page.
@@ -20,7 +21,8 @@ import {UsersPage} from "../users/users";
 })
 export class GuestPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public menuCtrl: MenuController) {
   }
 
   ionViewDidLoad() {
@@ -40,11 +42,19 @@ export class GuestPage {
 
   }
 
-  gotToProducts() {
+  goToProducts() {
     this.navCtrl.push(ProductListPage);
   }
 
-  gotToUsers() {
+  goToUsers() {
     this.navCtrl.push(UsersPage);
+  }
+
+  openRightMenu() {
+    this.menuCtrl.open('right');
+  }
+
+  goToSettings() {
+    this.navCtrl.push(SettingsPage)
   }
 }
