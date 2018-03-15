@@ -1,6 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {Component, Inject, OnInit} from '@angular/core';
+import {IonicPage, NavController} from 'ionic-angular';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {AppStorageService} from "../../services/app-storage.service";
+import {AppSettingsStorage} from "../../shared/shared.module";
+import { Storage } from '@ionic/storage';
+import {UsersPage} from "../users/users";
 
 /**
  * Generated class for the SettingsPage page.
@@ -9,7 +13,6 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-settings',
   templateUrl: 'settings.html',
@@ -17,8 +20,11 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 export class SettingsPage implements OnInit{
 
   settingsForm: FormGroup;
-  constructor(private fb: FormBuilder) {
 
+  constructor(private navCtrl: NavController,
+              private fb: FormBuilder,
+              private storage: Storage) {
+    this.storage.ready().then(() => console.log('storage is ready'));
   }
 
   ngOnInit(){
@@ -34,11 +40,24 @@ export class SettingsPage implements OnInit{
 
   }
 
+  getSettingsFromStrorage() {
+    this.storage.get('settings').then((settings)=> {
+      console.log(settings);
+    });
+
+  }
   ionViewDidLoad() {
+    this.getSettingsFromStrorage();
     console.log('ionViewDidLoad SettingsPage');
   }
 
   saveSettings() {
-    console.log(this.settingsForm.value);
+    if(this.settingsForm.value) {
+      this.storage.set('settings', JSON.stringify(this.settingsForm.value));
+    }
+
+  }
+  goToUsers() {
+    this.navCtrl.push(UsersPage);
   }
 }

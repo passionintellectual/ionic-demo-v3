@@ -17,16 +17,19 @@ import {ContactPageModule} from "../pages/contact/contact.module";
 import {ProductCategoriesPageModule} from "../pages/product-categories/product-categories.module";
 import {ProductListPageModule} from "../pages/product-list/product-list.module";
 import {ProductDetailsPageModule} from "../pages/product-details/product-details.module";
-import {UsersPageModule} from "../pages/users/users.module";
-import {SettingsPageModule} from "../pages/settings/settings.module";
 import {ReactiveFormsModule} from "@angular/forms";
+import {SettingsPage} from "../pages/settings/settings";
+import {IonicStorageModule} from "@ionic/storage";
+import {UsersPage} from "../pages/users/users";
 
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    SettingsPage,
+    UsersPage
   ],
   imports: [
     BrowserModule,
@@ -39,15 +42,19 @@ import {ReactiveFormsModule} from "@angular/forms";
     ContactPageModule,
     ProductListPageModule,
     ProductDetailsPageModule,
-    UsersPageModule,
-    SettingsPageModule,
+    IonicStorageModule.forRoot({
+      name: '__mydb',
+      driverOrder: ['localstorage', 'indexeddb', 'sqlite', 'websql']
+    }),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    SettingsPage,
+    UsersPage
   ],
   providers: [
     StatusBar,

@@ -1,14 +1,26 @@
-import { NgModule } from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { SettingsPage } from './settings';
+import {SharedModule} from "../../shared/shared.module";
+import {IonicStorageModule, StorageConfig} from "@ionic/storage";
 
 @NgModule({
   declarations: [
-    SettingsPage,
+
+
   ],
   imports: [
-    IonicPageModule.forChild(SettingsPage),
+
+
+
+
+
   ],
-  entryComponents: [SettingsPage]
+  entryComponents: []
 })
-export class SettingsPageModule {}
+export class SettingsPageModule {
+
+
+
+
+}
