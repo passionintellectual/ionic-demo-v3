@@ -1,5 +1,5 @@
 import { BaseRepository } from './../../services/base-services/base-repository';
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { SlidesModel } from '../../app-models/slides.interface';
 import { NavController } from 'ionic-angular';
 import {GuestPage} from "../guest/guest";

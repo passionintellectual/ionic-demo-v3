@@ -2,9 +2,6 @@ import {Component, ViewChild} from '@angular/core';
 import {IonicPage, Nav, NavController, NavParams} from 'ionic-angular';
 import {PageInterface} from "../../app-models/page.interface";
 import {MemberTabsPage} from "./member-tabs/member-tabs";
-import {until} from "selenium-webdriver";
-import ableToSwitchToFrame = until.ableToSwitchToFrame;
-
 /**
  * Generated class for the MemberHomePage page.
  *

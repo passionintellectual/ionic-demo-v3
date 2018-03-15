@@ -1,7 +1,7 @@
 import {BaseRepository} from './../services/base-services/base-repository';
 import {AppConfigService} from './../services/app-config.service';
 import {BrowserModule} from '@angular/platform-browser';
-import {ErrorHandler, NgModule, InjectionToken} from '@angular/core';
+import {ErrorHandler, NgModule} from '@angular/core';
 import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {StatusBar} from '@ionic-native/status-bar';
@@ -21,6 +21,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {SettingsPage} from "../pages/settings/settings";
 import {IonicStorageModule} from "@ionic/storage";
 import {UsersPage} from "../pages/users/users";
+import {CameraPageModule} from "../pages/camera/camera.module";
 
 
 @NgModule({
@@ -42,9 +43,9 @@ import {UsersPage} from "../pages/users/users";
     ContactPageModule,
     ProductListPageModule,
     ProductDetailsPageModule,
+    CameraPageModule,
     IonicStorageModule.forRoot({
-      name: '__mydb',
-      driverOrder: ['localstorage', 'indexeddb', 'sqlite', 'websql']
+      name: '__mydb'
     }),
     IonicModule.forRoot(MyApp)
   ],

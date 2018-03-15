@@ -1,8 +1,6 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {IonicPage, NavController} from 'ionic-angular';
+import {Component, OnInit} from '@angular/core';
+import { NavController} from 'ionic-angular';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AppStorageService} from "../../services/app-storage.service";
-import {AppSettingsStorage} from "../../shared/shared.module";
 import { Storage } from '@ionic/storage';
 import {UsersPage} from "../users/users";
 

@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams, Refresher} from 'ionic-angular';
+import { NavController, NavParams, Refresher} from 'ionic-angular';
 import {BaseRepository} from "../../services/base-services/base-repository";
-import {Observable} from "rxjs/Observable";
 import {Subscription} from "rxjs/Subscription";
 import {Storage} from "@ionic/storage";
 
@@ -27,7 +26,7 @@ export class UsersPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public usersRepo: BaseRepository,
-              private storage: Storage) {
+              public storage: Storage) {
 
 
 
