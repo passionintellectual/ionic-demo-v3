@@ -84,5 +84,10 @@
     <plugin name="cordova-plugin-x-toast" spec="^2.6.0" />
     <plugin name="cordova-sqlite-storage" spec="^2.2.1" />
     <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
-    <engine name="android" spec="7.0.0" />
+    <plugin name="cordova-plugin-camera" spec="^4.0.2" />
+    <allow-navigation href="http://192.168.1.103:8100" />
+    <allow-navigation href="http://192.168.56.1:8100" />
+    <plugin name="cordova-plugin-file" spec="^6.0.1" />
+    <plugin name="cordova-plugin-filepath" spec="^1.2.0" />
+    <engine name="android" spec="~7.0.0" />
 </widget>
